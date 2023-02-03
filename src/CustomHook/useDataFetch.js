@@ -9,19 +9,20 @@ const useDataFetch = (fullUrl) => {
 
   useEffect(() => {
     setLoading(true);
+    const fetchData = async () => {
     try {
-      fetch(fullUrl)
-        .then((response) => response.json())
-        .then((jsonResponse) => {
-          setData(jsonResponse);
+      const response = await fetch(fullUrl)
+        const data = await response.json();
+        setData(data)
           // console.log(data);
           // console.log(data.data[0].fact);
-        });
+        
     } catch (err) {
       setError(err);
     } finally {
       setLoading(false);
     }
+    fetchData()
   }, [fullUrl]);
 
   return { data, loading, error };
