@@ -17,7 +17,7 @@ function App() {
   }
   return (
     <div className="App">
-     <h3>ToggleState Hook</h3>
+     <h3>Fetch Data Custom Hook</h3>
       {data && data.data.map(catFact => (
         <p key={catFact._id} {...catFact}>{catFact.fact}</p>
         ))}
